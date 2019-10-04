@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBRISTVISAModelStoreContainer" CdmEntityContainer="DB_VISAEntities">
+    <EntitySetMapping Name="VISA_User_Login">
+      <EntityTypeMapping TypeName="DBRISTVISAModel.VISA_User_Login">
+        <MappingFragment StoreEntitySet="VISA_User_Login">
+          <ScalarProperty Name="RecNo" ColumnName="RecNo" />
+          <ScalarProperty Name="Opno" ColumnName="Opno" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="OP_Name" ColumnName="OP_Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="Authority" ColumnName="Authority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

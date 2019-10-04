@@ -1,0 +1,828 @@
+﻿
+
+@{
+    ViewBag.Title = "GFD_Report_DataMaintenance";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Data Maintenance </title>
+    
+    @*<style>
+        .row {
+            padding: 5px 5px 5px 5px;
+            margin: auto;
+        }
+
+
+        .no-js #loader {
+            display: none;
+        }
+              
+        
+    </style>*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+   
+</head>
+<body  >
+
+    <div class="se-pre-con"></div>
+
+    <div class="container bg-white badge-light text-center " style="margin-top:50px; border-radius:15px; padding:20px; ">
+ 
+      <h2 >กรอกข้อมูลคนต่างด้าว</h2>
+        <br/>
+
+
+        <div class="row">
+    
+            <div class="col-md text-md-left">
+               <h5><b>รายละเอียดข้อมูลคนต่างด้าว</b></h5>
+            </div>
+
+
+        </div>
+        <div class="row">
+
+        
+            <div class="col-md-2 text-md-left">
+                <p>ข้อมูลคนต่างด้าว</p>
+            </div>
+            <div class="col-md-10">
+      <hr   />
+            </div>
+
+
+        </div>
+
+        <div class="row">      
+               
+
+                <div class="col-md-3">
+                    <div class="form-group text-md-left">
+                        <label>คำนำหน้า</label>
+
+                        @Html.DropDownList("TITLE_NAME_EN", new SelectList("", ""), new { @id = "DDL_TITLE_NAME_EN", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+
+                    </div>
+
+
+                </div>
+
+
+     
+
+                <div class="col-md-3">
+
+                    <div class="form-group text-md-left w-100">
+                        <label>ชื่อต้น(ภาษาอังกฤษ)</label>
+                        <input type="text" class="form-control" id="TB_NAME_EN" />
+                    </div>
+
+                </div>
+
+     
+
+                <div class="col-md-3">
+                    <div class="form-group text-md-left">
+                        <label>ชื่อกลาง(ภาษาอังกฤษ)</label>
+                        <input type="text" class="form-control " id="TB_MID_NAME_EN"/>
+                    </div>
+                </div>
+               
+
+                <div class="col-md-3">
+
+                    <div class="form-group text-md-left">
+                        <label>ชื่อสกุล(ภาษาอังกฤษ)</label>
+                        <input type="text" class="form-control " id="TB_LAST_NAME_EN" />
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        <div class="row" >
+
+
+
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>คำนำหน้า</label>
+
+                    @Html.DropDownList("TITLE_NAME_TH", new SelectList("", ""), new { @id = "DDL_TB_TITLE_NAME_TH", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+                
+                </div>
+
+
+            </div>
+
+
+        
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left w-100">
+                    <label>ชื่อต้น(ภาษาไทย)</label>
+                    <input type="text" class="form-control " id="TB_NAME_TH" />
+                </div>
+
+            </div>
+
+            @*<div class="col-md-1 ">
+
+            </div>*@
+
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>ชื่อกลาง(ภาษาไทย)</label>
+                    <input type="text" class="form-control " id="TB_MID_NAME_TH" />
+                </div>
+            </div>
+            @*<div class="col-md-1">
+
+            </div>*@
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left">
+                    <label>ชื่อสกุล(ภาษาไทย)</label>
+                    <input type="text" class="form-control " id="TB_LAST_NAME_TH" />
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row">
+    
+            <div class="col-md text-md-left">
+                <p>กรุณากรอกข้อมูลให้ตรงกับหนังสือเดินทาง หากคนต่างด้าวไม่มีชื่อกลาง กรุณาเว้นช่องชื่อกลาง ภาษาไทย และอังกฤษ ไว้</p>
+            </div>
+            
+        </div>
+
+
+        <div class="row">
+
+     
+
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>วันเกิด วัน/เดือน/ปี</label>
+
+                    <div class="input-group">
+                        <input type="text" id="TB_BRITH_DAY"
+                               data-language="en"
+                               class="datepicker-here form-control "
+                               style="text-align:center;"
+                              data-date-format="dd-MM-yyyy" 
+                               readonly />
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-1">
+                <div class="form-group text-md-center">
+                    <p>อายุ</p>
+
+                    <label ld="LB_AGE">555</label>
+
+                </div>
+            </div>
+            <div class="col-md-2 ">
+                <din class="form-group">
+                    <p>  เพศ  :  </p>
+                    <label class="radio-inline"><input type="radio" name="SEX" value="MEN" id="RD_MEN" checked>ชาย   </label>
+                    <label class="radio-inline"><input type="radio" name="SEX" value="WOMEN" id="RD_WOMEN">หญิง   </label>
+                </din>
+            </div>
+
+            
+            <div class="col-md-3 text-md-left">
+                <div class="form-group">
+                    <label>สถานที่เกิด</label>
+                
+                    <input type="text" class="form-control" id="TB_NATAIVE_PLACE" />
+                </div>
+            </div>
+        
+
+            <div class="col-md-3 text-md-left">
+                <div class="form-group">
+                    <label> สัญชาติปัจจุบัน </label>
+                    @Html.DropDownList("CURRENT_NATIONALITY", new SelectList("", ""), new { @id = "DDL_CURRENT_NATIONALITY", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+
+                </div>
+
+
+            </div>
+        
+
+
+        </div>
+
+
+
+        <div class="row">
+
+                          
+            <div class="col-md-3 text-md-left">
+                <div class="form-group">
+                    <label> สัญชาติเมื่อเกิด </label>
+                    @Html.DropDownList("NATIONALITY", new SelectList("", ""), new { @id = "DDL_NATIONALITY", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+                </div>
+            </div>
+        
+            <div class="col-md-3 text-md-left">
+                <div class="form-group">
+                    <label> สถานะการสมรส </label>
+                    @Html.DropDownList("MARITAL_STATUS", new SelectList("", ""), new { @id = "DDL_MARITAL_STATUS", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+
+                </div>
+            </div>
+
+            <div class="col-md-3 text-md-left">
+                <div class="form-group">
+                    <label>อีเมล (ของคนต่างด้าว)</label>
+
+                    <input type="text" class="form-control " id="TB_EMAIL" />
+                </div>
+            </div>
+
+            <div class="col-md-3 text-md-left">
+                <div class="form-group">
+                    <label>เบอร์มือถือ</label>
+                    <input type="text" class="form-control " id="TB_PHONE"/>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="row">
+     
+            <div class="col-md-2 text-md-left text-nowrap">
+           
+                <P>  ข้อมูลที่อยู่ในประเทศไทย     </P>              
+              
+          
+            </div>
+
+        
+            <div class="col-md-10">
+
+                <hr />
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+     
+            <div class="col-md text-md-left">
+                <p>กรุณากรอกที่อยู่อาศัยจริงของคนต่างด้าว เพื่อป้องกันการคืนคำขอจากสำนักงานตรวจคนเข้าเมือง (กรณีพักโรงแรมหรือพาร์ทเม้นท์ โปรดระบุเลขที่ห้องและชั้น)</p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+          
+                <div class="input-group">
+               
+
+                    <div class="col-md-2">
+                        <p> ประเภทที่พัก : </p>
+                    </div>
+                 
+
+
+                    <div class="col-md-6 text-md-left">
+                        <div class="row">
+
+                            <div class="col-md-3 text-md-left">
+                                <label class="radio-inline "><input type="radio" name="SEX" value="MEN" id="RD_HOTEL" checked /> โรงแรม   </label>
+                            </div>
+                            <div class="col-md-3 text-nowrap text-md-left">
+                                <label class="radio-inline"><input type="radio" name="SEX" value="WOMEN" id="RD_APARTMENT">อพาร์ทเม้นท์   </label>
+                            </div>
+                                <div class="col-md-3 text-md-left">
+                                    <label class="radio-inline"><input type="radio" name="SEX" value="WOMEN" id="RD_GUESTHOUSE">เกสต์เฮ้าส์   </label>
+                                </div>
+                                 <div class="col-md-3 text-md-left">
+                                        <label class="radio-inline"><input type="radio" name="SEX" value="WOMEN" id="RD_HOME">บ้าน/อื่นๆ   </label>
+                                </div>
+                          </div>
+                    </div>
+                 </div>
+
+
+          
+
+
+
+        </div>
+
+        <div class="row">
+
+
+
+        
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>ชื่อที่พัก/ชั้น/เลขที่ห้อง</label>
+
+                    <input type="text" class="form-control" id="TB_NAME_OF_ACCOMMODATION"/>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left w-100">
+                    <label>เลขที่</label>
+                    <input type="text" class="form-control " id="TB_AT_NUM" />
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left">
+                    <label>ซอย</label>
+                    <input type="text" class="form-control " id="TB_NAME_OF_ALLEY"/>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left">
+                    <label>ถนน</label>
+                    <input type="text" class="form-control "   id="TB_NAME_OF_ROAD"/>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+
+
+     
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>จังหวัด</label>
+                    <input type="text" class="form-control "   id="TB_PROVINCE"/>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left ">
+                    <label>เขต/อำเภอ</label>
+                  
+                    <input type="text" class="form-control "  id="TB_DISTRICT"/>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>แขวง/ตำบล</label>
+                    <input type="text" class="form-control " id="TB_SUB_DISTRICT" />
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left">
+                    <label>รหัสไปรษณีย์</label>
+                    <input type="text" class="form-control " id="ZIP_CODE" />
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="row">
+
+
+
+            <div class="col-md-2 text-md-left">
+                <P>  ข้อมูลหนังสือเดินทาง     </P>    
+            </div>
+
+            <div class="col-md-10">
+                <hr />
+            </div>
+
+
+        </div>
+
+
+
+        <div class="row">
+
+
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>หนังสือเดือนทางเลขที่</label>
+                    <input type="text" class="form-control " id="TB_PS_ID" />
+
+                </div>
+
+            </div>
+            
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left w-100">
+                    <label>วัน/เดือน/ปี ที่ออก</label>
+                    <div class="input-group">
+                        <input type="text" id="PS_ISSUE_DATE"
+                               data-language="en"
+                               class="datepicker-here form-control "
+                               style="text-align:center;"
+                               data-date-format="dd-MM-yyyy"
+                               readonly />
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>ออกให้ที่</label>
+                    <input type="text" class="form-control " id="TB_PS_ISSUE_FROM" />
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left">
+                    <label>หมดอายุวันที่</label>
+                    <div class="input-group">
+                        <input type="text" id="PS_EXP_DATE"
+                               data-language="en"
+                               class="datepicker-here form-control "
+                               style="text-align:center;"
+                               data-date-format="dd-MM-yyyy"
+                               readonly />
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+
+
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>เข้าเมืองครั้งล่าสุดวันที่</label>
+                    <div class="input-group">
+                        <input type="text" id="PS_ARRIVAL_DATE"
+                               data-language="en"
+                               class="datepicker-here form-control "
+                               style="text-align:center;"
+                               data-date-format="dd-MM-yyyy"
+                               readonly />
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="col-md-3">
+
+                <div class="form-group text-md-left w-100">
+                    <label>ได้รับอนญาติให้อยู่ถึงวันที่</label>
+                    <div class="input-group">
+                        <input type="text" id="PS_RETURN_DATE"
+                               data-language="en"
+                               class="datepicker-here form-control "
+                               style="text-align:center;"
+                               data-date-format="dd-MM-yyyy"
+                               readonly />
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-3">
+                <div class="form-group text-md-left">
+                    <label>ถือวีซ่าล่าสุดประเภท</label>
+                    @Html.DropDownList("TYPE_OF_PS", new SelectList("", ""), new { @id = "DDL_TYPE_OF_PS", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+                
+                </div>
+            </div>
+
+
+        
+
+        </div>
+
+        <div class="row">
+
+
+
+            <div class="col-md-2 text-md-left text-nowrap">
+                <P>  ข้อมูลการเดินทางครั้งล่าสุด     </P>
+            </div>
+
+            <div class="col-md-10">
+                <hr />
+            </div>
+
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-3 text-md-left">
+                <p>ตม.6 ลำดับที่</p>
+                <input class="form-control"  type="text" id="TB_TM6" />
+            </div>
+            <div class="col-md-3 text-md-left">
+                <p>เข้ามาทางด่าน</p>
+                @Html.DropDownList("CHECKPOINT", new SelectList("", ""), new { @id = "DDL_CHECKPOINT", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+
+
+            </div>
+            <div class="col-md-3 text-md-left">
+                <p>เดินทางเข้าประเทศไทยโดยพาหนะ</p>              
+                @Html.DropDownList("VENHICLE", new SelectList("", ""), new { @id = "DDL_VENHICLE", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+
+
+            </div>
+            <div class="col-md-3 text-md-left">
+                <p>จากประเทศ</p>                
+                @Html.DropDownList("COUNTRY", new SelectList("", ""), new { @id = "DDL_COUNTRY", @class = "form-control  text-center ", @style = "width:100 %; padding: 0px; text -align-center;  " })
+                       
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            @*end*@
+        </div>
+    
+    <div class="container bg-white badge-light text-center " style="margin-top:50px; border-radius:15px; padding:20px;">
+       
+         <div class="row">
+            <div class="col-md text-md-left">
+                <h5> <b>แนมเอกสาร</b></h5>
+            </div>
+        </div>
+
+
+         <div class="row ">
+             <div class="col-md-1 ">
+                 <b>ลำดับ</b>
+             </div>
+             <div class="col-md-8 text-md-left">
+                 <b>ชื่อเอกสาร</b>
+             </div>
+             <div class="col-md-3 text-md-center">
+                 <b>แนบเอกสาร</b>
+             </div>
+        </div>
+        <br/>
+
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>1</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>รูปถ่าย</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_PIC"    />                 
+         
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>2</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>สำเนาหนังสือเดินทางของผู้ขออนุญาต(หน้าแรกและทุกหน้าที่มีตราประทับของประเทศไทย)</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_COPY_PS" />
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>3</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>บัตร ตม. 6</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_TM6" />
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>4</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>ใบนัดหมาย 90 วันครั้งล่าสุด (ถ้ามี)</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_90DAY" />
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>5</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>สำเนาใบอนุญาติทำงาน Work Permit (ถ้ามี)</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_COPY_WORK" />
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>6</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>สำเนาใบแจ้งยกเลิก การอนุญาติทำงาน (ถ้ามี)</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_CANCEL_WORK" />
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>7</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>สำเนาใบสำคัญถิ่นที่อยู่ (ถ้ามี)</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_7" />
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>8</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>สำเนาใบสำคัญประจำตัวคนต่างด้าว (ถ้ามี)</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_8" />
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-1 ">
+                <p>9</p>
+            </div>
+            <div class="col-md-8 text-md-left">
+                <p>อื่นๆ</p>
+            </div>
+            <div class="col-md-3 text-md-center">
+                <input type="file" class="form-control-file badge-primary" id="ATF_OTHER" />
+
+            </div>
+        </div>
+
+
+
+
+        @*end*@
+    </div>
+    <br/>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 ">
+
+            </div>
+                <div class="col-md-2 ">
+                    <input type="button" id="BTN_SUBMIT" value="SUBMIT" class="btn btn-success" />
+
+                </div>
+                <div class="col-md-2">
+                    <input type="button" id="BTN_CANCEL" value="CANCEL" class="btn btn-dark" />
+                </div>
+
+            </div>
+
+
+    </div>
+
+    <br/>
+
+    @*/------------------------------------------------ end of disigh ------------------------------------*@
+
+
+
+
+
+    <script type="text/javascript">
+
+        $(window).load(function () {
+           $(".se-pre-con").fadeOut("slow");
+        });
+
+    </script>
+
+</body>
+
+
+</html>
+
+
+
